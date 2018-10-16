@@ -30,7 +30,8 @@ int main (void)
 
     while(1)
     {
-        for (int i=0, int j=2; i<3; i++, j++) {
+        int j=2;
+        for (int i=0; i<3; i++, j++) {
             LEDs[i]->setval_gpio("1");
             LEDs[j%3]->setval_gpio("0");
             usleep(100000);  // wait for 0.5 seconds
