@@ -13,7 +13,7 @@ int main (void)
     GPIOClass* rLED = new GPIOClass("17");
     GPIOClass* gLED = new GPIOClass("27");
     GPIOClass* yLED = new GPIOClass("22");
-    GFIOClass* LEDs[3] = {rLED, gLED, yLED};
+    GPIOClass* LEDs[3] = {rLED, gLED, yLED};
 
     // Export pins
     rLED->export_gpio();
