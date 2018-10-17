@@ -34,7 +34,7 @@ int main (void)
         for (int i=0; i<3; i++, j++) {
             LEDs[i]->setval_gpio("1");
             LEDs[j%3]->setval_gpio("0");
-            usleep(100000);  // wait for 0.5 seconds
+            usleep(100000);  // wait for 0.1 seconds
         }
     }
     cout << "Exiting....." << endl;
