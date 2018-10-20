@@ -11,11 +11,16 @@
 
 int main (void)
 {
+    cout << "Begin" << endl;
+
     SPIClass* spi = new SPIClass();
+
+    cout << "Init SPI..." << endl;
 
     spi->Start();
     usleep(1000000);
 
+    cout << "Reading..." << endl;
     char* data = spi->ReadManyTimes(100);
     
     cout << "Data:" << endl;
@@ -26,6 +31,8 @@ int main (void)
     delete[] data;
 
     spi->Stop();
+
+    cout << "Done!" << endl;
 
     return 0;
 }
