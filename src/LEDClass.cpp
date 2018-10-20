@@ -8,7 +8,7 @@ using namespace std;
 
 LEDClass::LEDClass()
 {
-	this->rLED = new GPIOClass("17");
+    this->rLED = new GPIOClass("17");
     this->gLED = new GPIOClass("27");
     this->yLED = new GPIOClass("22");
 
@@ -23,10 +23,10 @@ LEDClass::LEDClass()
 
 void LEDClass::ON(int index)
 {
-	this->LEDs[index]->setval_gpio("1");
+    this->LEDs[index]->setval_gpio("1");
 }
 
 void LEDClass::OFF(int index)
 {
-	this->LEDs[index]->setval_gpio("0");
+    this->LEDs[index]->setval_gpio("0");
 }

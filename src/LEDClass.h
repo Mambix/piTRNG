@@ -17,10 +17,10 @@ private:
     GPIOClass* yLED = new GPIOClass("22");
     GPIOClass* LEDs[3] = {rLED, gLED, yLED};
 public:
-	LEDClass();
+    LEDClass();
 
-    void ON(int idxex) {};
-    void OFF(int index) {};
+    void ON(int idxex);
+    void OFF(int index);
 };
 
 #endif
