@@ -18,7 +18,7 @@ public:
     SPIClass();
     virtual ~SPIClass();
     uint16_t ReadRAW();
-    uint8_t Read();
+    char Read();
 //    void ReadManyTimes(char* data, int size);
     void Start();
     void Stop();
