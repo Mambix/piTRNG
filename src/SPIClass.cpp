@@ -84,7 +84,7 @@ char SPIClass::Read()
 {
     uint16_t ret = this->ReadRAW();
     ret = ret >> 2;
-    return ret && 0xff;
+    return ret & 0xff;
 }
 
 void SPIClass::Start()
