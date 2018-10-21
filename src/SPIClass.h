@@ -5,6 +5,7 @@
 #include <string>
 #include <bcm2835.h>
 #include "EntropyClass.h"
+#include "LEDClass.h"
 
 using namespace std;
 /* SPI Class
@@ -15,6 +16,7 @@ class SPIClass
 private:
     EntropyClass* Entropy;
 public:
+    LEDClass* LEDs;
     SPIClass();
     virtual ~SPIClass();
     uint16_t ReadRAW();

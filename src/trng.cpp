@@ -2,11 +2,10 @@
 #include "SPIClass.h"
 
 using namespace std;
-// g++ -Wall trng.cpp SPIClass.cpp EntropyClass.cpp LEDClass.cpp -lbcm2835 -o trng
+// Compile with: g++ -Wall trng.cpp ../src/SPIClass.cpp ../src/LEDClass.cpp ../src/EntropyClass.cpp ../GPIO/GPIOClass.cpp -lbcm2835 -o readTRNG
 
 int main (void)
 {
-    LEDClass* LED = new LEDClass();
     SPIClass* SPI = new SPIClass();  
 
     return 0;

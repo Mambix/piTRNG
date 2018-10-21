@@ -11,7 +11,7 @@ using namespace std;
 SPIClass::SPIClass()
 {
     this->Entropy = new EntropyClass();
-    this->Entropy->Stop();
+    this->LEDs = new LEDClass();
 /**/
     if (!bcm2835_init()) {
         printf("bcm2835_init failed. Are you running as root??\n");
@@ -62,14 +62,19 @@ SPIClass::SPIClass()
     //Return SPI pins to default inputs state
     //bcm2835_spi_end();
 /**/
+
+    this->Start();
 }
 
 SPIClass::~SPIClass() {
     bcm2835_spi_end();
     bcm2835_close();
+
+    this->Stop();
 }
 
 uint16_t SPIClass::ReadRAW() {
+    this->LED->yLED->ON();
     char data_buffer[2];
     data_buffer[0] = 0x55;
     data_buffer[1] = 0x55;
@@ -77,6 +82,12 @@ uint16_t SPIClass::ReadRAW() {
 
     uint16_t ret = (uint16_t)data_buffer[0] << 8;
     ret += data_buffer[1];
+    this->LED->yLED->OFF();
+    if (ret & 0x0000 == 0x0000) {
+        this->LED->rLED->ON();
+    } else {
+        this->LED->rLED->OFF();
+    }
     return ret;
 }
 
@@ -90,14 +101,11 @@ char SPIClass::Read()
 void SPIClass::Start()
 {
     this->Entropy->Start();
-    // Power up device
-    // Make 4 dummy reads
-    for (int i=0; i<4; i++) {
-        int dummy = this->ReadRAW();
-    }
+    this->LEDs->gLED->ON();
 }
 
 void SPIClass::Stop()
 {
     this->Entropy->Stop();
+    this->LEDs->gLED->OFF();
 }
