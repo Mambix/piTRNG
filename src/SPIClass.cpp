@@ -74,7 +74,7 @@ SPIClass::~SPIClass() {
 }
 
 uint16_t SPIClass::ReadRAW() {
-    this->LED->ON(2);
+    this->LEDs->ON(2);
     char data_buffer[2];
     data_buffer[0] = 0x55;
     data_buffer[1] = 0x55;
@@ -82,11 +82,11 @@ uint16_t SPIClass::ReadRAW() {
 
     uint16_t ret = (uint16_t)data_buffer[0] << 8;
     ret += data_buffer[1];
-    this->LED->OFF(2);
-    if (ret & 0x0000 == 0x0000) {
-        this->LED->ON(0);
+    this->LEDs->OFF(2);
+    if (ret & 0x2000 == 0x2000) {
+        this->LEDs->ON(0);
     } else {
-        this->LED->OFF(0);
+        this->LEDs->OFF(0);
     }
     return ret;
 }
