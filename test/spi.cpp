@@ -1,4 +1,4 @@
-// Compile with: g++ -Wall spi.cpp ../src/SPIClass.cpp ../src/EntropyClass.cpp ../GPIO/GPIOClass.cpp -lbcm2835 -o testSPI
+// Compile with: g++ -Wall spi.cpp ../src/SPIClass.cpp ../src/LEDClass.cpp ../src/EntropyClass.cpp ../GPIO/GPIOClass.cpp -lbcm2835 -o testSPI
 
 #include <iostream>
 #include <iomanip>
