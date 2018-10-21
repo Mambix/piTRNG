@@ -7,14 +7,13 @@
 
 using namespace std;
 
-ADS7883Class::ADS7883Class()
-{
+ADS7883Class::ADS7883Class() {
     this->Entropy = new EntropyClass();
     this->Entropy->Stop();
 
-    this->CS = new GPIOClass("17");
-    this->SDI = new GPIOClass("27");
-    this->CLK = new GPIOClass("22");
+    this->CS = new GPIOClass("8");
+    this->SDI = new GPIOClass("9");
+    this->CLK = new GPIOClass("11");
 
     this->CS->export_gpio();
     this->SDI->export_gpio();
@@ -28,6 +27,10 @@ ADS7883Class::ADS7883Class()
     this->CLK->setval_gpio("1");
 
     this->delay = 5000; //5ms -> 
+}
+
+ADS7883Class::~ADS7883Class() {
+    this->Entropy->Stop();
 }
 
 void ADS7883Class::wait() {
