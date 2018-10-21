@@ -24,9 +24,9 @@ ADS7883Class::ADS7883Class() {
     this->CLK->setdir_gpio("out");
 
     this->CS->setval_gpio("1");
-    this->CLK->setval_gpio("1");
+    this->CLK->setval_gpio("0");
 
-    this->delay = 50; //50us -> 
+    this->delay = 1; //50us -> 
 }
 
 ADS7883Class::~ADS7883Class() {
@@ -39,11 +39,11 @@ void ADS7883Class::wait() {
 
 string ADS7883Class::readBIT() {
     string inputstate;
+    this->CLK->setval_gpio("1");
     this->wait();
     this->CLK->setval_gpio("0");
-    this->SDI->getval_gpio(inputstate);
     this->wait();
-    this->CLK->setval_gpio("1");
+    this->SDI->getval_gpio(inputstate);
     cout << inputstate;
     return inputstate;
 }
