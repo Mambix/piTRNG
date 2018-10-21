@@ -47,7 +47,7 @@ SPIClass::SPIClass()
     //	BCM2835_SPI_CLOCK_DIVIDER_4     = 4,       ///< 4 = 16ns = 62.5MHz
     //	BCM2835_SPI_CLOCK_DIVIDER_2     = 2,       ///< 2 = 8ns = 125MHz, fastest you can get
     //	BCM2835_SPI_CLOCK_DIVIDER_1     = 1,       ///< 1 = 262.144us = 3.814697260kHz, same as 0/65536
-    bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_128);
+    bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_8);
 
     //Set SPI data mode
     //	BCM2835_SPI_MODE0 = 0,  // CPOL = 0, CPHA = 0, Clock idle low, data is clocked in on rising edge, output data (change) on falling edge
