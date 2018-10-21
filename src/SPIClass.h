@@ -14,13 +14,14 @@ class SPIClass
 {
 private:
     EntropyClass* Entropy;
-
 public:
-	SPIClass();
-    char* Read(int size);
-    char* ReadMeanyTimes(int size);
-    void Start() {};
-    void Stop() {};
+    SPIClass();
+    virtual ~SPIClass();
+    int ReadRAW();
+    char Read();
+//    void ReadManyTimes(char* data, int size);
+    void Start();
+    void Stop();
 };
 
 #endif

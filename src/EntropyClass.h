@@ -20,8 +20,8 @@ private:
 public:
 	EntropyClass();
 
-    void Start() {};
-    void Stop() {};
+    void Start();
+    void Stop();
 };
 
 #endif
