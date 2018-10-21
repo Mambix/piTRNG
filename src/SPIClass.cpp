@@ -69,20 +69,20 @@ SPIClass::~SPIClass() {
     bcm2835_close();
 }
 
-int SPIClass::ReadRAW() {
-    char data_buffer[2];
+uint16_t SPIClass::ReadRAW() {
+    uint8_t data_buffer[2];
     data_buffer[0] = 0x55;
     data_buffer[1] = 0x55;
     bcm2835_spi_transfern(&data_buffer[0], 2);
 
-    int ret = data_buffer[0] * 256;
+    uint16_t ret = data_buffer[0] << 8;
     ret += data_buffer[1];
     return ret;
 }
 
-char SPIClass::Read()
+uint8_t SPIClass::Read()
 {
-    char data_buffer[2];
+    uint_t data_buffer[2];
     data_buffer[0] = 0x55;
     data_buffer[1] = 0x55;
     bcm2835_spi_transfern(&data_buffer[0], 2);
