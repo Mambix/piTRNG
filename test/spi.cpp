@@ -28,7 +28,7 @@ int main (void)
     for (int i=0; i<100; i++) {
         data_buffer[i] = spi->Read();
     }
-    printf ("elapsed= %lds\n", double(clock(NULL) - start));
+    printf ("elapsed= %fs\n", double(clock() - start));
     
     cout << "8bit Data:" << endl;
     int l=0;
@@ -47,7 +47,7 @@ int main (void)
     for (int i=0; i<100; i++) {
         data_buffer_raw[i] = spi->ReadRAW();
     }
-    printf ("elapsed= %lds\n", double(clock(NULL) - start));
+    printf ("elapsed= %fs\n", double(clock() - start));
 
     cout << "RAW Data:" << endl;
     l=0;
