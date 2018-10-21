@@ -83,7 +83,7 @@ uint16_t SPIClass::ReadRAW() {
     uint16_t ret = (uint16_t)data_buffer[0] << 8;
     ret += data_buffer[1];
     this->LEDs->OFF(2);
-    if (ret & 0x2000 == 0x2000) {
+    if ((ret & 0x2000) == 0x2000) {
         this->LEDs->ON(0);
     } else {
         this->LEDs->OFF(0);

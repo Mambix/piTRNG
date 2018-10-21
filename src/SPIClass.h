@@ -15,8 +15,8 @@ class SPIClass
 {
 private:
     EntropyClass* Entropy;
-public:
     LEDClass* LEDs;
+public:
     SPIClass();
     virtual ~SPIClass();
     uint16_t ReadRAW();
