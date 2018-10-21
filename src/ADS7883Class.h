@@ -18,7 +18,7 @@ private:
     EntropyClass* Entropy;
     uint32_t delay;
     void wait();
-    string readBIT();
+    string readBIT(bool low);
 public:
     ADS7883Class();
     ~ADS7883Class();
