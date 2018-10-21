@@ -19,13 +19,14 @@ int main (void)
     cout << "Init SPI..." << endl;
 
     spi->Start();
-    usleep(1000000);
 
     cout << "Reading 8bit..." << endl;
     char data_buffer[100];
+    size_t start = time(NULL);
     for (int i=0; i<100; i++) {
         data_buffer[i] = spi->Read();
     }
+    printf ("elapsed= %lds\n", time(NULL) - start);
     
     cout << "8bit Data:" << endl;
     int l=0;
@@ -40,9 +41,11 @@ int main (void)
 
     cout << "Reading RAW..." << endl;
     uint16_t data_buffer_raw[100];
+    start = time(NULL);
     for (int i=0; i<100; i++) {
         data_buffer_raw[i] = spi->ReadRAW();
     }
+    printf ("elapsed= %lds\n", time(NULL) - start);
 
     cout << "RAW Data:" << endl;
     l=0;
