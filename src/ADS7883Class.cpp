@@ -26,7 +26,7 @@ ADS7883Class::ADS7883Class() {
     this->CS->setval_gpio("1");
     this->CLK->setval_gpio("1");
 
-    this->delay = 5000; //5ms -> 
+    this->delay = 50; //50us -> 
 }
 
 ADS7883Class::~ADS7883Class() {

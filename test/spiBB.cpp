@@ -1,4 +1,4 @@
-// Compile with: g++ -Wall spiBB.cpp ../src/ADS7883Class.cpp ../src/EntropyClass.cpp ../GPIO/GPIOClass.cpp -o testSPI
+// Compile with: g++ -Wall spiBB.cpp ../src/ADS7883Class.cpp ../src/EntropyClass.cpp ../GPIO/GPIOClass.cpp -o testBBSPI
 
 #include <iostream>
 #include <iomanip>
