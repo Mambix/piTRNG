@@ -66,7 +66,7 @@ uint16_t ADS7883Class::ReadRAW()
         data = data << 1;
         sData = this->readBIT();
         if (sData == "1") {
-            data |= 1;
+            data |= (uint16_t)1;
         }
     }
     this->CS->setval_gpio("1");
