@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <ctime>
 #include <unistd.h>
 #include <errno.h>
 #include <stdio.h>
@@ -23,11 +24,11 @@ int main (void)
 
     cout << "Reading 8bit..." << endl;
     char data_buffer[100];
-    size_t start = time(NULL);
+    clock_t  start = clock();
     for (int i=0; i<100; i++) {
         data_buffer[i] = spi->Read();
     }
-    printf ("elapsed= %lds\n", time(NULL) - start);
+    printf ("elapsed= %lds\n", double(clock(NULL) - start));
     
     cout << "8bit Data:" << endl;
     int l=0;
@@ -42,11 +43,11 @@ int main (void)
 
     cout << "Reading RAW..." << endl;
     uint16_t data_buffer_raw[100];
-    start = time(NULL);
+    start = clock(NULL);
     for (int i=0; i<100; i++) {
         data_buffer_raw[i] = spi->ReadRAW();
     }
-    printf ("elapsed= %lds\n", time(NULL) - start);
+    printf ("elapsed= %lds\n", double(clock(NULL) - start));
 
     cout << "RAW Data:" << endl;
     l=0;
