@@ -16,7 +16,11 @@ int main (void)
 
     cout << "Init SPI..." << endl;
 
-    spi->Start();
+    // spi->Start();
+    // Wake from sleep
+    for (int i=0; i<4; i++) {
+        spi->ReadRAW();
+    }
     // usleep(1000000);
 
     cout << "Reading 8bit..." << endl;
@@ -28,7 +32,7 @@ int main (void)
     cout << "8bit Data:" << endl;
     int l=0;
     for (int i=0; i<100; i++, l++) {
-        printf("%02hhX ", data_buffer[i]);
+        printf("%02X ", data_buffer[i]);
         if (l == 9) {
             cout << endl;
             l=-1;
@@ -53,7 +57,7 @@ int main (void)
     }
     cout << endl;
 
-    spi->Stop();
+    // spi->Stop();
     delete spi;
 
     cout << "Done!" << endl;

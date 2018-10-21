@@ -30,7 +30,7 @@ int main (void)
     cout << "8bit Data:" << endl;
     int l=0;
     for (int i=0; i<100; i++, l++) {
-        printf("%02hhX ", data_buffer[i]);
+        printf("%02X ", data_buffer[i]);
         if (l == 9) {
             cout << endl;
             l=-1;

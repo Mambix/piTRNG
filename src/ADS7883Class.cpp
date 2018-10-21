@@ -9,7 +9,7 @@ using namespace std;
 
 ADS7883Class::ADS7883Class() {
     this->Entropy = new EntropyClass();
-    this->Entropy->Stop();
+    this->Entropy->Start();
 
     this->CS = new GPIOClass("8");
     this->SDI = new GPIOClass("9");
