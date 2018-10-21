@@ -81,7 +81,7 @@ uint16_t ADS7883Class::ReadRAW()
 
 uint8_t ADS7883Class::Read()
 {
-    uint8_t ret = this->ReadRAW() & 0xff;
+    uint8_t ret = (this->ReadRAW() >> 2) & 0xff;
     return ret;
 }
 
