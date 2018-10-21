@@ -82,12 +82,9 @@ uint16_t SPIClass::ReadRAW() {
 
 uint8_t SPIClass::Read()
 {
-    uint_t data_buffer[2];
-    data_buffer[0] = 0x55;
-    data_buffer[1] = 0x55;
-    bcm2835_spi_transfern(&data_buffer[0], 2);
-
-    return data_buffer[1];
+    uint16_t ret = this->ReadRAW();
+    ret = ret >> 2;
+    return ret && 0xff;
 }
 
 void SPIClass::Start()
