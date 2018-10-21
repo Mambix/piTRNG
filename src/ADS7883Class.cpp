@@ -54,9 +54,10 @@ void ADS7883Class::PowerUP()
     }
 }
 
-int ADS7883Class::ReadRAW()
+uint16_t ADS7883Class::ReadRAW()
 {
-    int i, data = 0;
+    int i;
+    uint16_t data = 0;
     string sData;
     
     this->CS->setval_gpio("0");
@@ -75,9 +76,9 @@ int ADS7883Class::ReadRAW()
     return data;
 }
 
-char ADS7883Class::Read()
+uint8_t ADS7883Class::Read()
 {
-    char ret = this->ReadRAW() && 0xff;
+    uint8_t ret = this->ReadRAW() && 0xff;
     return ret;
 }
 

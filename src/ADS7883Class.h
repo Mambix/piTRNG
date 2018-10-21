@@ -24,8 +24,8 @@ public:
     ~ADS7883Class();
 
     void PowerUP();
-    int ReadRAW();
-    char Read();
+    uint16_t ReadRAW();
+    uint8_t Read();
 
     void Start();
     void Stop();
