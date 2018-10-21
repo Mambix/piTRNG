@@ -39,7 +39,7 @@ int main (void)
     cout << endl;
 
     cout << "Reading RAW..." << endl;
-    int data_buffer_raw[100];
+    uint16_t data_buffer_raw[100];
     for (int i=0; i<100; i++) {
         data_buffer_raw[i] = spi->ReadRAW();
     }
