@@ -61,15 +61,12 @@ uint16_t ADS7883Class::ReadRAW()
     string sData;
     
     this->CS->setval_gpio("0");
-    for (i=0; i<14; i++) {
+    for (i=0; i<16; i++) {
         data = data << 1;
         sData = this->readBIT();
         if (sData == "1") {
             data |= 1;
         }
-    }
-    for (i=0; i<2; i++) {
-        sData = this->readBIT();
     }
     this->CS->setval_gpio("1");
 
