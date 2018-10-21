@@ -6,7 +6,24 @@ using namespace std;
 
 int main (void)
 {
-    SPIClass* SPI = new SPIClass();  
+    SPIClass* spi = new SPIClass();
+
+    spi->Start();
+    usleep(250000);
+
+    uint32_t size = 1024 * 1024;
+
+    char data_buffer[size];
+    for (int i=0; i<size; i++) {
+        data_buffer[i] = spi->Read();
+    }
+    
+    for (uint32_t i=0; i<size; i++) {
+        cout << data_buffer[i];
+    }
+
+    spi->Stop();
+    delete spi;
 
     return 0;
 }
