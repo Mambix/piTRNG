@@ -14,6 +14,7 @@ int main (void)
 {
     SPIClass* spi = new SPIClass();
     spi->Start();
+    usleep(100000);
 
     uint32_t size = 100000;
 

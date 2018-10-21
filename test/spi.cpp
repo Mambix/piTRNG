@@ -19,6 +19,7 @@ int main (void)
     cout << "Init SPI..." << endl;
 
     spi->Start();
+    usleep(100000);
 
     cout << "Reading 8bit..." << endl;
     char data_buffer[100];
