@@ -44,6 +44,7 @@ string ADS7883Class::readBIT() {
     this->SDI->getval_gpio(inputstate);
     this->wait();
     this->CLK->setval_gpio("1");
+    cout << inputstate;
     return inputstate;
 }
 
@@ -69,6 +70,8 @@ uint16_t ADS7883Class::ReadRAW()
         }
     }
     this->CS->setval_gpio("1");
+
+    cout << endl;
 
     return data;
 }
