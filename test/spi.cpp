@@ -47,7 +47,7 @@ int main (void)
     cout << "RAW Data:" << endl;
     l=0;
     for (int i=0; i<100; i++, l++) {
-        printf("%04hhhhX ", data_buffer_raw[i]);
+        printf("%04X ", data_buffer_raw[i]);
         if (l == 9) {
             cout << endl;
             l=-1;
