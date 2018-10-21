@@ -1,3 +1,9 @@
+#include <iostream>
+#include <iomanip>
+#include <unistd.h>
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "LEDClass.h"
 #include "SPIClass.h"
 
