@@ -13,11 +13,9 @@ using namespace std;
 int main (void)
 {
     SPIClass* spi = new SPIClass();
-
     spi->Start();
-    usleep(250000);
 
-    uint32_t size = 1024 * 1024;
+    uint32_t size = 100000;
 
     char data_buffer[size];
     for (uint32_t i=0; i<size; i++) {
