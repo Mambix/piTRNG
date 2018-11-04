@@ -1,2 +1,2 @@
 # piTRNG
-C++ code for Raspberry Pi based True Random Number Generator
+Python code for Raspberry Pi based True Random Number Generator
